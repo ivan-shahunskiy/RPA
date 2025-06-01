@@ -64,24 +64,17 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="В этом рабочем процессе буду складывать два числа." DisplayName="Sequence - Arguments Direction" sap:VirtualizedContainerService.HintSize="419,359" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="intFirstNumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="5" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="intSecondNumber">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="10" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="5" Name="intFirstNumber" />
+      <Variable x:TypeArguments="x:Int32" Default="10" Name="intSecondNumber" />
       <Variable x:TypeArguments="x:Int32" Name="intResult" />
+      <Variable x:TypeArguments="x:Boolean" Name="variable1" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -91,15 +84,9 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SumTwoNumbers workflow" sap:VirtualizedContainerService.HintSize="377,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SumTwoNumbers.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="out_intSum">
-          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intResult" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_intFirstNumber">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intFirstNumber" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_intSecondNumber">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intSecondNumber" />
-        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_intSum">[intResult]</OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intFirstNumber">[intFirstNumber]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_intSecondNumber">[intSecondNumber]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box - Result" sap:VirtualizedContainerService.HintSize="377,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[intResult]" />
