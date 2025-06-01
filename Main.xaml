@@ -68,7 +68,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="В этом рабочем процессе буду складывать два числа с помощью числовых переменных." DisplayName="Sequence - Arguments Direction" sap:VirtualizedContainerService.HintSize="419,563" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="В этом рабочем процессе буду складывать два числа с помощью числовых переменных." DisplayName="Sequence - Arguments Direction" sap:VirtualizedContainerService.HintSize="419,370" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="5" Name="intFirstNumber" />
       <Variable x:TypeArguments="x:Int32" Default="10" Name="intSecondNumber" />
@@ -89,13 +89,5 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box - Result" sap:VirtualizedContainerService.HintSize="377,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[intResult]" />
-    <Sequence DisplayName="Пример" sap:VirtualizedContainerService.HintSize="377,153" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[intFirstNumber.ToString]" />
-    </Sequence>
   </Sequence>
 </Activity>
